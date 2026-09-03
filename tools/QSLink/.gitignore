@@ -1,5 +1,2 @@
-publish/
-Programs/
 bin/
-obj/Debug
-obj/Release
+obj/

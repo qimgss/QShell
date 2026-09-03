@@ -59,11 +59,11 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: QSBox
-          path: Dtools\qsbox\target\aarch64-linux-android\release\qsbox
+          path: tools\qsbox\target\aarch64-linux-android\release\qsbox
 
       - name: Upload QSLink
         uses: actions/upload-artifact@v7
         with:
           name: QSLink
-          path: tools\QSLink\publish\QSLink.exe
+          path: tools\QSLink\bin\Release\net8.0\win-x64\publish\QSLink.exe
 

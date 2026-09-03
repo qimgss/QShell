@@ -1,8 +1,5 @@
 tools/qsbox/target
 tools/qsbox/blobs
-publish\
-Programs\
-bin\
-obj\Debug
-obj\Debug
-
+tools/QSLink/programs/
+tools/QSLink/bin/
+tools/QSLink/obj/

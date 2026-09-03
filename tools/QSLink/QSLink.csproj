@@ -1,14 +1,53 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <!--
+    【重要】OutputType 说明：
+    - 若设为 Exe（默认 Console 子系统）：双击运行不会闪退，会有一个控制台；
+      推荐大多数场景使用此配置。
+    - 若确实需要在 Windows 上作为 WinExe（无自动控制台窗口），
+      请把 OutputType 改为 WinExe，并由代码里的 AllocConsole 自行创建控制台。
+
+    为避免"新建窗口/闪退"，这里保持 Exe（Console 子系统），
+    并让 kptools 用 UseShellExecute=true 继承同一个控制台。
+  -->
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>QSLink</RootNamespace>
     <AssemblyName>QSLink</AssemblyName>
+    <Nullable>disable</Nullable>
+
+    <!-- 单文件发布相关 -->
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>false</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+
+    <!-- 让单文件 exe 作为控制台程序（Windows 上会绑定到启动它的控制台） -->
+    <UseWindowsForms>false</UseWindowsForms>
+    <UseWPF>false</UseWPF>
+
+    <!--
+      排除 ProbeResources 目录，避免与主程序 Program.cs 的 Main 冲突（CS0017）。
+      同时关闭默认 Compile，只显式包含根目录的 Program.cs。
+    -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
+  <!-- 只编译主程序的源文件 -->
   <ItemGroup>
-    <EmbeddedResource Include="Programs\**\*" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+
+  <!-- 嵌入资源：精确指定 programs/ 下的文件 -->
+  <ItemGroup>
+    <EmbeddedResource Include="programs\kptools.exe" />
+    <EmbeddedResource Include="programs\kpimg" />
+    <!-- msys dll：按实际文件名放 programs/ 下，发布时会一并嵌入 -->
+    <EmbeddedResource Include="programs\msys-2.0.dll" />
+    <EmbeddedResource Include="programs\msys-z.dll" />
+    <EmbeddedResource Include="programs\githubdl.exe" />
+    <EmbeddedResource Include="programs\yq.exe" />
+    <EmbeddedResource Include="programs\magiskboot.exe" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>QSLink.Probe</RootNamespace>
+    <AssemblyName>ProbeResources</AssemblyName>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <!-- 这个小工具不嵌入任何资源，只引用主程序集 -->
+
+</Project>
