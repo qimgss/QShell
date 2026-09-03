@@ -1,0 +1,8 @@
+tools/qsbox/target
+tools/qsbox/blobs
+publish\
+Programs\
+bin\
+obj\Debug
+obj\Debug
+

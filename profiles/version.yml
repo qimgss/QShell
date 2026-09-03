@@ -1,0 +1,15 @@
+releases:
+  android:
+    qshell: 1
+    qsbox: 2
+  win:
+    qshell: 3
+    qsbox: 4
+
+preview:
+  android:
+    qshell: 1
+    qsbox: 2
+  win:
+    qshell: 3
+    qsbox: 4

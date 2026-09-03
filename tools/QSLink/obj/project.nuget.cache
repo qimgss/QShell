@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "cVg5f4YcUes=",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\QShell\\tools\\QSLink\\QSLink.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.30\\microsoft.net.illink.tasks.8.0.30.nupkg.sha512"
+  ],
+  "logs": []
+}

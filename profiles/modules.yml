@@ -1,0 +1,25 @@
+general:
+  zygisk-next:
+    url: https://github.com/Dr-TSNG/ZygiskNext/releases/download/v1.5.0/Zygisk-Next-1.5.0-843-5217106-release.zip
+    version: 1.5.0-843
+  trikey-store:
+    url: https://github.com/5ec1cff/TrickyStore/releases/download/1.4.1/Tricky-Store-v1.4.1-245-72b2e84-release.zip
+    version: 1.4.1-245
+  lsposed:
+    url: https://lsposed.zip/
+    version: 2.2.0-7854
+  hybrid-mount:
+    url: https://github.com/Hybrid-Mount/meta-hybrid_mount/releases/download/v6.1.0/Hybrid-Mount-6.1.0-1872.zip
+    version: 6.1.0-1872
+
+apatch:
+  kpms:
+    peekaboo:
+      url: https://github.com/LRFP-Team/LRFP/raw/refs/heads/main/Implementers/Rooting/Modules/Kernel%20modules/cherish_peekaboo_1.5.5.kpm
+      version: 1.5.5
+    peekaboo-compat:
+      url: https://github.com/LRFP-Team/LRFP/raw/refs/heads/main/Implementers/Rooting/Modules/Kernel%20modules/cherish_peekaboo_1.5.5_compat.kpm
+      version: 1.5.5-compat
+    nohello: 
+      url: https://github.com/LRFP-Team/LRFP/blob/main/Implementers/Rooting/Modules/Kernel%20modules/Nohello-v1.8.3.7-102-ab38e9c-release.kpm
+      version: 1.8.3.7-102

@@ -1,0 +1,416 @@
+   Compiling autocfg v1.5.1
+   Compiling libc v0.2.189
+   Compiling cfg-if v1.0.4
+   Compiling getrandom v0.4.3
+   Compiling bitflags v1.3.2
+   Compiling pin-utils v0.1.0
+   Compiling windows-link v0.2.1
+   Compiling fastrand v2.5.0
+   Compiling once_cell v1.21.4
+   Compiling windows-sys v0.61.2
+   Compiling memoffset v0.6.5
+   Compiling nix v0.25.1
+   Compiling memfd-exec v0.1.5
+error[E0433]: cannot find `unix` in `os`
+ --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\anon_pipe.rs:4:9
+  |
+4 |     os::unix::prelude::{AsFd, AsRawFd, BorrowedFd, FromRawFd, IntoRawFd, RawFd},
+  |         ^^^^ could not find `unix` in `os`
+
+error[E0433]: cannot find `unix` in `os`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:13:9
+   |
+13 |     os::unix::prelude::{OsStrExt, OsStringExt},
+   |         ^^^^ could not find `unix` in `os`
+
+error[E0433]: cannot find `sys` in `nix`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:20:5
+   |
+20 |     sys::memfd::{memfd_create, MemFdCreateFlag},
+   |     ^^^ could not find `sys` in `nix`
+
+error[E0432]: unresolved imports `libc::pid_t`, `libc::sigemptyset`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:18:12
+   |
+18 | use libc::{pid_t, sigemptyset, signal};
+   |            ^^^^^  ^^^^^^^^^^^ no `sigemptyset` in the root
+   |            |
+   |            no `pid_t` in the root
+
+error[E0433]: cannot find `unix` in `os`
+ --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:9:9
+  |
+9 |     os::unix::{
+  |         ^^^^ could not find `unix` in `os`
+
+error[E0432]: unresolved import `nix::unistd`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:21:5
+   |
+21 |     unistd::{close, fexecve, write},
+   |     ^^^^^^ could not find `unistd` in `nix`
+
+error[E0433]: cannot find `unix` in `os`
+ --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\stdio.rs:5:14
+  |
+5 | use std::os::unix::prelude::{AsRawFd, FromRawFd};
+  |              ^^^^ could not find `unix` in `os`
+
+error[E0432]: unresolved import `libc::pid_t`
+ --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:8:5
+  |
+8 | use libc::pid_t;
+  |     ^^^^^^-----
+  |           |
+  |           no `pid_t` in the root
+
+error[E0432]: unresolved import `libc::off64_t`
+ --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:5:18
+  |
+5 | use libc::{self, off64_t};
+  |                  ^^^^^^^ no `off64_t` in the root
+  |
+help: a similar name exists in the module
+  |
+5 - use libc::{self, off64_t};
+5 + use libc::{self, off_t};
+  |
+
+error[E0432]: unresolved import `libc::pread64`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:60:13
+   |
+60 |         use libc::pread64;
+   |             ^^^^^^-------
+   |                   |
+   |                   no `pread64` in the root
+
+error[E0432]: unresolved import `libc::pwrite64`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:101:13
+    |
+101 |         use libc::pwrite64;
+    |             ^^^^^^--------
+    |                   |
+    |                   no `pwrite64` in the root
+
+error[E0425]: cannot find function `pipe2` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\anon_pipe.rs:17:19
+    |
+ 17 |         cvt(libc::pipe2(fds.as_mut_ptr(), libc::O_CLOEXEC))?;
+    |                   ^^^^^
+    |
+   ::: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.189\src\windows\mod.rs:556:5
+    |
+556 |     pub fn pipe(fds: *mut c_int, psize: c_uint, textmode: c_int) -> c_int;
+    |     ---------------------------------------------------------------------- similarly named function `pipe` defined here
+    |
+help: a function with a similar name exists
+    |
+ 17 -         cvt(libc::pipe2(fds.as_mut_ptr(), libc::O_CLOEXEC))?;
+ 17 +         cvt(libc::pipe(fds.as_mut_ptr(), libc::O_CLOEXEC))?;
+    |
+
+error[E0425]: cannot find value `O_CLOEXEC` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\anon_pipe.rs:17:49
+   |
+17 |         cvt(libc::pipe2(fds.as_mut_ptr(), libc::O_CLOEXEC))?;
+   |                                                 ^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find type `pollfd` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\anon_pipe.rs:97:25
+   |
+97 |     let mut fds: [libc::pollfd; 2] = unsafe { zeroed() };
+   |                         ^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `POLLIN` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\anon_pipe.rs:99:27
+   |
+99 |     fds[0].events = libc::POLLIN;
+   |                           ^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `POLLIN` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\anon_pipe.rs:101:27
+    |
+101 |     fds[1].events = libc::POLLIN;
+    |                           ^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function `poll` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\anon_pipe.rs:104:33
+    |
+104 |         cvt_r(|| unsafe { libc::poll(fds.as_mut_ptr(), 2, -1) })?;
+    |                                 ^^^^ not found in `libc`
+
+error[E0425]: cannot find function `fork` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:445:19
+    |
+445 |         cvt(libc::fork())
+    |                   ^^^^ not found in `libc`
+
+error[E0425]: cannot find value `STDIN_FILENO` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:502:43
+    |
+502 |             cvt_r(|| libc::dup2(fd, libc::STDIN_FILENO))?;
+    |                                           ^^^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `STDOUT_FILENO` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:505:43
+    |
+505 |             cvt_r(|| libc::dup2(fd, libc::STDOUT_FILENO))?;
+    |                                           ^^^^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `STDERR_FILENO` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:508:43
+    |
+508 |             cvt_r(|| libc::dup2(fd, libc::STDERR_FILENO))?;
+    |                                           ^^^^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find type `sigset_t` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:523:47
+    |
+523 |             let mut set = MaybeUninit::<libc::sigset_t>::uninit();
+    |                                               ^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function `pthread_sigmask` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:525:26
+    |
+525 |             cvt_nz(libc::pthread_sigmask(
+    |                          ^^^^^^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `SIG_SETMASK` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:526:23
+    |
+526 |                 libc::SIG_SETMASK,
+    |                       ^^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `SIGPIPE` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\executable.rs:532:40
+    |
+532 |                 let ret = signal(libc::SIGPIPE, libc::SIG_DFL);
+    |                                        ^^^^^^^
+    |
+   ::: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.189\src\windows\mod.rs:238:1
+    |
+238 | pub const SIGFPE: c_int = 8;
+    | ----------------------- similarly named constant `SIGFPE` defined here
+    |
+help: a constant with a similar name exists
+    |
+532 -                 let ret = signal(libc::SIGPIPE, libc::SIG_DFL);
+532 +                 let ret = signal(libc::SIGFPE, libc::SIG_DFL);
+    |
+
+error[E0425]: cannot find value `UIO_MAXIOV` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:23:11
+   |
+23 |     libc::UIO_MAXIOV as usize
+   |           ^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function `readv` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:40:19
+    |
+ 40 |             libc::readv(
+    |                   ^^^^^
+    |
+   ::: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.189\src\windows\mod.rs:558:5
+    |
+558 |     pub fn read(fd: c_int, buf: *mut c_void, count: c_uint) -> c_int;
+    |     ----------------------------------------------------------------- similarly named function `read` defined here
+    |
+help: a function with a similar name exists
+    |
+ 40 -             libc::readv(
+ 40 +             libc::read(
+    |
+
+error[E0425]: cannot find type `iovec` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:42:47
+   |
+42 |                 bufs.as_ptr() as *const libc::iovec,
+   |                                               ^^^^^ not found in `libc`
+
+error[E0425]: cannot find function `writev` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:86:19
+    |
+ 86 |             libc::writev(
+    |                   ^^^^^^
+    |
+   ::: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.189\src\windows\mod.rs:564:5
+    |
+564 |     pub fn write(fd: c_int, buf: *const c_void, count: c_uint) -> c_int;
+    |     -------------------------------------------------------------------- similarly named function `write` defined here
+    |
+help: a function with a similar name exists
+    |
+ 86 -             libc::writev(
+ 86 +             libc::write(
+    |
+
+error[E0425]: cannot find type `iovec` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:88:47
+   |
+88 |                 bufs.as_ptr() as *const libc::iovec,
+   |                                               ^^^^^ not found in `libc`
+
+error[E0425]: cannot find function `fcntl` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:115:32
+    |
+115 |         unsafe { Ok((cvt(libc::fcntl(self.as_raw_fd(), libc::F_GETFD))? & libc::FD_CLOEXEC) != 0) }
+    |                                ^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `F_GETFD` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:115:62
+    |
+115 |         unsafe { Ok((cvt(libc::fcntl(self.as_raw_fd(), libc::F_GETFD))? & libc::FD_CLOEXEC) != 0) }
+    |                                                              ^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `FD_CLOEXEC` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:115:81
+    |
+115 |         unsafe { Ok((cvt(libc::fcntl(self.as_raw_fd(), libc::F_GETFD))? & libc::FD_CLOEXEC) != 0) }
+    |                                                                                 ^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function `fcntl` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:120:38
+    |
+120 |             let previous = cvt(libc::fcntl(self.as_raw_fd(), libc::F_GETFD))?;
+    |                                      ^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `F_GETFD` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:120:68
+    |
+120 |             let previous = cvt(libc::fcntl(self.as_raw_fd(), libc::F_GETFD))?;
+    |                                                                    ^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `FD_CLOEXEC` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:121:40
+    |
+121 |             let new = previous | libc::FD_CLOEXEC;
+    |                                        ^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function `fcntl` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:123:27
+    |
+123 |                 cvt(libc::fcntl(self.as_raw_fd(), libc::F_SETFD, new))?;
+    |                           ^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `F_SETFD` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:123:57
+    |
+123 |                 cvt(libc::fcntl(self.as_raw_fd(), libc::F_SETFD, new))?;
+    |                                                         ^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function `ioctl` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:131:23
+    |
+131 |             cvt(libc::ioctl(self.as_raw_fd(), libc::FIONBIO, &v))?;
+    |                       ^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `FIONBIO` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\file_desc.rs:131:53
+    |
+131 |             cvt(libc::ioctl(self.as_raw_fd(), libc::FIONBIO, &v))?;
+    |                                                     ^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function `kill` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:37:32
+   |
+37 |             cvt(unsafe { libc::kill(self.pid, libc::SIGKILL) }).map(drop)
+   |                                ^^^^ not found in `libc`
+
+error[E0425]: cannot find value `SIGKILL` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:37:53
+    |
+ 37 |             cvt(unsafe { libc::kill(self.pid, libc::SIGKILL) }).map(drop)
+    |                                                     ^^^^^^^
+    |
+   ::: C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\libc-0.2.189\src\windows\mod.rs:237:1
+    |
+237 | pub const SIGILL: c_int = 4;
+    | ----------------------- similarly named constant `SIGILL` defined here
+    |
+help: a constant with a similar name exists
+    |
+ 37 -             cvt(unsafe { libc::kill(self.pid, libc::SIGKILL) }).map(drop)
+ 37 +             cvt(unsafe { libc::kill(self.pid, libc::SIGILL) }).map(drop)
+    |
+
+error[E0425]: cannot find function `waitpid` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:46:33
+   |
+46 |         cvt_r(|| unsafe { libc::waitpid(self.pid, &mut status, 0) })?;
+   |                                 ^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function `waitpid` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:56:38
+   |
+56 |         let pid = cvt(unsafe { libc::waitpid(self.pid, &mut status, libc::WNOHANG) })?;
+   |                                      ^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `WNOHANG` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:56:75
+   |
+56 |         let pid = cvt(unsafe { libc::waitpid(self.pid, &mut status, libc::WNOHANG) })?;
+   |                                                                           ^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function, tuple struct or tuple variant `WIFEXITED` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:81:15
+   |
+81 |         libc::WIFEXITED(self.0)
+   |               ^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function, tuple struct or tuple variant `WEXITSTATUS` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:103:37
+    |
+103 |         self.exited().then(|| libc::WEXITSTATUS(self.0))
+    |                                     ^^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function, tuple struct or tuple variant `WIFSIGNALED` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:107:15
+    |
+107 |         libc::WIFSIGNALED(self.0).then(|| libc::WTERMSIG(self.0))
+    |               ^^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function, tuple struct or tuple variant `WTERMSIG` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:107:49
+    |
+107 |         libc::WIFSIGNALED(self.0).then(|| libc::WTERMSIG(self.0))
+    |                                                 ^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function, tuple struct or tuple variant `WIFSIGNALED` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:111:15
+    |
+111 |         libc::WIFSIGNALED(self.0) && libc::WCOREDUMP(self.0)
+    |               ^^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function, tuple struct or tuple variant `WCOREDUMP` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:111:44
+    |
+111 |         libc::WIFSIGNALED(self.0) && libc::WCOREDUMP(self.0)
+    |                                            ^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function, tuple struct or tuple variant `WIFSTOPPED` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:115:15
+    |
+115 |         libc::WIFSTOPPED(self.0).then(|| libc::WSTOPSIG(self.0))
+    |               ^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function, tuple struct or tuple variant `WSTOPSIG` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:115:48
+    |
+115 |         libc::WIFSTOPPED(self.0).then(|| libc::WSTOPSIG(self.0))
+    |                                                ^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find function, tuple struct or tuple variant `WIFCONTINUED` in crate `libc`
+   --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\process.rs:119:15
+    |
+119 |         libc::WIFCONTINUED(self.0)
+    |               ^^^^^^^^^^^^ not found in `libc`
+
+error[E0425]: cannot find value `STDERR_FILENO` in crate `libc`
+  --> C:\Users\Administrator\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\memfd-exec-0.1.5\src\stdio.rs:56:67
+   |
+56 |                 if fd.as_raw_fd() >= 0 && fd.as_raw_fd() <= libc::STDERR_FILENO {
+   |                                                                   ^^^^^^^^^^^^^ not found in `libc`
+
+Some errors have detailed explanations: E0425, E0432, E0433.
+For more information about an error, try `rustc --explain E0425`.
+error: could not compile `memfd-exec` (lib) due to 55 previous errors
+warning: build failed, waiting for other jobs to finish...
